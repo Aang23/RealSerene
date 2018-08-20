@@ -12,7 +12,7 @@ import com.aang23.realserene.utils.TimeUtils;
 
 public class InfoSubCommand {
 	public static void call(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-		if(args[1]!=null){
+		if(args.length>1){
           if(args[1].equals("list")){
 			sender.sendMessage(new TextComponentString("Options are : real_daytime, seconds_real_daytime, tick_daytime, tick_daytime_synced, month"));
 		  } else if (args[1].equals("real_daytime")){
