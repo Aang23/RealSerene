@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import com.aang23.realserene.events.SeasonChangeListener;
+import com.aang23.realserene.utils.TimeUtils;
 import com.aang23.realserene.events.DaytimeChangeListener;
 import com.aang23.realserene.config.ConfigManager;
 import com.aang23.realserene.commands.RealSereneCommand;
@@ -68,5 +69,6 @@ public class RealSerene
         //Set the gamerule to prevent the sun from glitching out sometimes.
         MinecraftServer minecraftServer = FMLCommonHandler.instance().getMinecraftServerInstance();
         minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doDaylightCycle", "false");
+        TimeUtils.syncValue = configManager.generalSettings.dayTimeSyncValue.getValue();
     }
 }

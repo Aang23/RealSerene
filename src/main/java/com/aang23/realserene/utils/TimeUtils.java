@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class TimeUtils
 {
     public static int totalSecondTime = (24*60*60);
+    public static int syncValue = 6000;
     
     public static int getMonth(){
         DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("MM");

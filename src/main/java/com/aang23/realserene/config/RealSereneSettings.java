@@ -6,4 +6,6 @@ public interface RealSereneSettings {
 
   boolean realSeasonsCycle();
 
+  int dayTimeSyncValue();
+
 }
