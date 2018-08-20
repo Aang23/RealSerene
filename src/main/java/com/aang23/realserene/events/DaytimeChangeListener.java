@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class TickEventListener
+public class DaytimeChangeListener
 {
     @SubscribeEvent
     public void onWorldTick(TickEvent.WorldTickEvent event)
@@ -35,7 +35,7 @@ public class TickEventListener
     //Syncs the time to real since MC's time differs from real. Eg : 24000 is converted to 18000 to match midnight
     public int syncToReal(int time){
         time -= 6000;
-        if (time < 0){
+        if (time <= 0){
             int diff = 0 - time;
             time = 24000 - diff;
         } 
