@@ -10,21 +10,14 @@ import sereneseasons.handler.season.SeasonHandler;
 import sereneseasons.season.SeasonSavedData;
 import sereneseasons.season.SeasonTime;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import com.aang23.realserene.utils.TimeUtils;
 
 public class SeasonChangeListener
 {
     @SubscribeEvent
     public void onTick(TickEvent.WorldTickEvent event)
     {
-        //Format the date
-        DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("MM");
-        LocalDateTime time = LocalDateTime.now();
-
-        //Get the current month
-        int month = Integer.parseInt(hourFormat.format(time));
-
-        //Set the current month
-        switch(month){
+        switch(TimeUtils.getMonth()){
             case 1: setSeason(0, Season.SubSeason.MID_WINTER); break;
             case 2: setSeason(0, Season.SubSeason.LATE_WINTER); break;
             case 3: setSeason(0, Season.SubSeason.EARLY_SPRING); break;

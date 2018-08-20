@@ -20,12 +20,15 @@ public class RealSereneCommand extends CommandBase {
 	@Override
 	public String getUsage(ICommandSender icommandsender)
 	{
-	return "/realserene <subcommand>";
+	return "Usage : /realserene <info>";
 	}
 
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-		
+        if (args[0]!=null){
+        if(args[0].equals("info")) InfoSubCommand.call(server, sender, args);
+        else sender.sendMessage(new TextComponentString("Usage : /realserene <info>"));
+        } else sender.sendMessage(new TextComponentString("Usage : /realserene <info>"));
 	}
 }
 
