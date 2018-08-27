@@ -1,11 +1,20 @@
 package com.aang23.realserene.config;
+import com.aang23.realserene.RealSerene;
 
-public interface RealSereneSettings {
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
 
-  boolean realDayTime();
+@Config(modid = RealSerene.MODID)
+public class RealSereneSettings {
+  @Config.Comment("Enable daytime syncing")
+  public static boolean realDayTime = true;
 
-  boolean realSeasonsCycle();
+  @Config.Comment("Enable seasons syncing")
+  public static boolean realSeasonsCycle = true;
 
-  int dayTimeSyncValue();
+  @Config.Comment("The value used to sync the day")
+  public static int dayTimeSyncValue = 6000;
 
 }

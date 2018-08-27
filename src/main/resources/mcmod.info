@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "realserene",
+  "name": "RealSerene",
+  "description": "An syncing mod and more",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Aang23"],
+  "credits": "Credits to Serene's author",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -13,8 +13,8 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import com.aang23.realserene.events.SeasonChangeListener;
 import com.aang23.realserene.utils.TimeUtils;
 import com.aang23.realserene.events.DaytimeChangeListener;
-import com.aang23.realserene.config.ConfigManager;
 import com.aang23.realserene.commands.RealSereneCommand;
+import com.aang23.realserene.config.RealSereneSettings;
 
 
 @Mod(modid = RealSerene.MODID, name = RealSerene.NAME, version = RealSerene.VERSION)
@@ -24,13 +24,11 @@ public class RealSerene
     public static final String NAME = "Real Serene Seasons";
     public static final String VERSION = "1.3";
 
-    public static ConfigManager configManager;
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         System.out.println("Initializing RealSerene...");
-        configManager = new ConfigManager(event);    
+           
     }
 
     @EventHandler
@@ -44,13 +42,13 @@ public class RealSerene
     {
         System.out.println("Starting RealSerene...");
         //Register the handler for daytime
-        if(configManager.generalSettings.realDayTime()){
+        if(RealSereneSettings.realDayTime){
             System.out.println("Registering event for RealDayTime...");
             MinecraftForge.EVENT_BUS.register(new DaytimeChangeListener());
         } else {
             System.out.println("Skipping event for RealDayTime...");
         }
-        if(configManager.generalSettings.realSeasonsCycle()){
+        if(RealSereneSettings.realSeasonsCycle){
             System.out.println("Registering event for RealSeasonsCycle...");
             MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
         } else {
@@ -69,6 +67,6 @@ public class RealSerene
         //Set the gamerule to prevent the sun from glitching out sometimes.
         MinecraftServer minecraftServer = FMLCommonHandler.instance().getMinecraftServerInstance();
         minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doDaylightCycle", "false");
-        TimeUtils.syncValue = configManager.generalSettings.dayTimeSyncValue.getValue();
+        TimeUtils.syncValue = RealSereneSettings.dayTimeSyncValue;
     }
 }
