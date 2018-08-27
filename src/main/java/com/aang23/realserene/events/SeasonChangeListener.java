@@ -8,6 +8,8 @@ import sereneseasons.handler.season.SeasonHandler;
 import sereneseasons.season.SeasonSavedData;
 import sereneseasons.season.SeasonTime;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+
+import com.aang23.realserene.config.RealSereneSettings;
 import com.aang23.realserene.utils.TimeUtils;
 
 public class SeasonChangeListener
@@ -15,6 +17,7 @@ public class SeasonChangeListener
     @SubscribeEvent
     public void onTick(TickEvent.WorldTickEvent event)
     {
+        if(RealSereneSettings.realSeasonsCycle){
         switch(TimeUtils.getMonth()){
             case 1: setSeason(0, Season.SubSeason.MID_WINTER); break;
             case 2: setSeason(0, Season.SubSeason.LATE_WINTER); break;
@@ -29,6 +32,7 @@ public class SeasonChangeListener
             case 11: setSeason(0, Season.SubSeason.LATE_AUTUMN); break;
             case 12: setSeason(0, Season.SubSeason.EARLY_WINTER); break;
         }
+      }
     }
 
     public static void setSeason(int dim, Season.SubSeason newSeason) 

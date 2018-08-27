@@ -41,24 +41,17 @@ public class RealSerene
     public void postInit(FMLPostInitializationEvent event)
     {
         System.out.println("Starting RealSerene...");
-        //Register the handler for daytime
-        if(RealSereneSettings.realDayTime){
-            System.out.println("Registering event for RealDayTime...");
-            MinecraftForge.EVENT_BUS.register(new DaytimeChangeListener());
-        } else {
-            System.out.println("Skipping event for RealDayTime...");
-        }
-        if(RealSereneSettings.realSeasonsCycle){
-            System.out.println("Registering event for RealSeasonsCycle...");
-            MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
-        } else {
-            System.out.println("Skipping event for RealSeasonsCycle...");
-        }
     }
 
     @EventHandler
     public void serverStarting(FMLServerStartingEvent event){
         event.registerServerCommand(new RealSereneCommand());
+
+        System.out.println("Registering event for RealDayTime...");
+        MinecraftForge.EVENT_BUS.register(new DaytimeChangeListener());
+        
+        System.out.println("Registering event for RealSeasonsCycle...");
+        MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
     }
 
     @EventHandler
