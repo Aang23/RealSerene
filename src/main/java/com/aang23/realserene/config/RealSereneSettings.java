@@ -3,12 +3,17 @@ import com.aang23.realserene.RealSerene;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.common.config.Config.Name;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = RealSerene.MODID)
 public class RealSereneSettings {
+  @Config.Name("Seasons Settings")
+  @Config.Comment("Here you can change seasons changing dates")
+  public static final SeasonsDates dayLenghtMenu = new SeasonsDates();
+
   @Config.Comment("Enable daytime syncing")
   public static boolean realDayTime = true;
 
@@ -17,6 +22,71 @@ public class RealSereneSettings {
 
   @Config.Comment("The value used to sync the day")
   public static int dayTimeSyncValue = 6000;
+
+  public static class SeasonsDates {
+    @Config.Name("Early summer starting date :")
+    public String start_EARLY_SUMMER = "xx/xx";
+    @Config.Name("Early summer ending date :")
+    public String stop_EARLY_SUMMER = "xx/xx";
+
+    @Config.Name("Mid summer starting date :")
+    public String start_MID_SUMMER = "xx/xx";
+    @Config.Name("Mid summer ending date :")
+    public String stop_MID_SUMMER = "xx/xx";
+
+    @Config.Name("Late summer starting date :")
+    public String start_LATE_SUMMER = "xx/xx";
+    @Config.Name("Late summer ending date :")
+    public String stop_LATE_SUMMER = "xx/xx";
+
+
+    @Config.Name("Early autumn starting date :")
+    public String start_EARLY_AUTUMN = "xx/xx";
+    @Config.Name("Early autumn ending date :")
+    public String stop_EARLY_AUTUMN = "xx/xx";
+
+    @Config.Name("Mid autumn starting date :")
+    public String start_MID_AUTUMN = "xx/xx";
+    @Config.Name("Mid autumn ending date :")
+    public String stop_MID_AUTUMN = "xx/xx";
+
+    @Config.Name("Late autumn starting date :")
+    public String start_LATE_AUTUMN = "xx/xx";
+    @Config.Name("Late autumn ending date :")
+    public String stop_LATE_AUTUMN = "xx/xx";
+
+
+    @Config.Name("Early spring starting date :")
+    public String start_EARLY_SPRING = "xx/xx";
+    @Config.Name("Early spring ending date :")
+    public String stop_EARLY_SPRING = "xx/xx";
+
+    @Config.Name("Mid spring starting date :")
+    public String start_MID_SPRING = "xx/xx";
+    @Config.Name("Mid spring ending date :")
+    public String stop_MID_SPRING = "xx/xx";
+
+    @Config.Name("Late spring starting date :")
+    public String start_LATE_SPRING = "xx/xx";
+    @Config.Name("Late spring ending date :")
+    public String stop_LATE_SPRING = "xx/xx";
+
+
+    @Config.Name("Early winter starting date :")
+    public String start_EARLY_WINTER = "xx/xx";
+    @Config.Name("Early winter ending date :")
+    public String stop_EARLY_WINTER = "xx/xx";
+
+    @Config.Name("Mid winter starting date :")
+    public String start_MID_WINTER = "xx/xx";
+    @Config.Name("Mid winter ending date :")
+    public String stop_MID_WINTER = "xx/xx";
+
+    @Config.Name("Late winter starting date :")
+    public String start_LATE_WINTER = "xx/xx";
+    @Config.Name("Late winter ending date :")
+    public String stop_LATE_WINTER = "xx/xx";
+  }
 
   @Mod.EventBusSubscriber(modid = RealSerene.MODID)
     private static class Handler
