@@ -10,28 +10,15 @@ import sereneseasons.season.SeasonTime;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import com.aang23.realserene.config.RealSereneSettings;
+import com.aang23.realserene.timers.SeasonsTimer;
 import com.aang23.realserene.utils.TimeUtils;
+import com.aang23.realserene.utils.SeasonsHelper;
 
-public class SeasonChangeListener
-{
+public class SeasonChangeListener {
     @SubscribeEvent
-    public void onTick(TickEvent.WorldTickEvent event)
-    {
-        if(RealSereneSettings.realSeasonsCycle){
-        switch(TimeUtils.getMonth()){
-            case 1: setSeason(0, Season.SubSeason.MID_WINTER); break;
-            case 2: setSeason(0, Season.SubSeason.LATE_WINTER); break;
-            case 3: setSeason(0, Season.SubSeason.EARLY_SPRING); break;
-            case 4: setSeason(0, Season.SubSeason.MID_SPRING); break;
-            case 5: setSeason(0, Season.SubSeason.LATE_SPRING); break;
-            case 6: setSeason(0, Season.SubSeason.EARLY_SUMMER); break;
-            case 7: setSeason(0, Season.SubSeason.MID_SUMMER); break;
-            case 8: setSeason(0, Season.SubSeason.LATE_SUMMER); break;
-            case 9: setSeason(0, Season.SubSeason.EARLY_AUTUMN); break;
-            case 10: setSeason(0, Season.SubSeason.MID_AUTUMN); break;
-            case 11: setSeason(0, Season.SubSeason.LATE_AUTUMN); break;
-            case 12: setSeason(0, Season.SubSeason.EARLY_WINTER); break;
+    public void onTick(TickEvent.WorldTickEvent event) {
+        if (RealSereneSettings.realSeasonsCycle) {
+            SeasonsHelper.setSeason(0, SeasonsTimer.season);
         }
-      }
     }
 }

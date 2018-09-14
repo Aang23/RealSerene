@@ -15,6 +15,8 @@ import com.aang23.realserene.utils.TimeUtils;
 import com.aang23.realserene.events.DaytimeChangeListener;
 import com.aang23.realserene.commands.RealSereneCommand;
 import com.aang23.realserene.config.RealSereneSettings;
+import java.util.Timer;
+import com.aang23.realserene.timers.SeasonsTimer;
 
 
 @Mod(modid = RealSerene.MODID, name = RealSerene.NAME, version = RealSerene.VERSION)
@@ -52,6 +54,8 @@ public class RealSerene
         
         System.out.println("Registering event for RealSeasonsCycle...");
         MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
+        Timer timer = new Timer();
+        timer.schedule(new SeasonsTimer(), 0, 60000);
     }
 
     @EventHandler
