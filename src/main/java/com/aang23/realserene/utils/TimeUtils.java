@@ -14,6 +14,12 @@ public class TimeUtils
         return Integer.parseInt(hourFormat.format(time));
     }
 
+    public static int getDay(){
+        DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("DD");
+        LocalDateTime time = LocalDateTime.now();
+        return Integer.parseInt(hourFormat.format(time));
+    }
+
     public static int getRawTickTime(){
         return (int)Math.round(getTimeValue()*24000);
     }

@@ -34,15 +34,4 @@ public class SeasonChangeListener
         }
       }
     }
-
-    public static void setSeason(int dim, Season.SubSeason newSeason) 
-    {
-        MinecraftServer minecraftServer = FMLCommonHandler.instance().getMinecraftServerInstance();
-
-        SeasonSavedData seasonData = SeasonHandler.getSeasonSavedData(minecraftServer.getWorld(dim));
-        seasonData.seasonCycleTicks = SeasonTime.ZERO.getSubSeasonDuration() * newSeason.ordinal();
-        seasonData.markDirty();
-        SeasonHandler.sendSeasonUpdate(minecraftServer.getWorld(dim));
-    }
-
 }
