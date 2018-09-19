@@ -63,7 +63,10 @@ public class RealSerene
     {
         //Set the gamerule to prevent the sun from glitching out sometimes.
         MinecraftServer minecraftServer = FMLCommonHandler.instance().getMinecraftServerInstance();
+        if(RealSereneSettings.realDayTime)
         minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doDaylightCycle", "false");
+        else
+        minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doDaylightCycle", "true");
         TimeUtils.syncValue = RealSereneSettings.dayTimeSyncValue;
     }
 }

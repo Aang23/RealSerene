@@ -3,6 +3,8 @@ package com.aang23.realserene.utils;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import com.aang23.realserene.config.RealSereneSettings;
+
 public class TimeUtils
 {
     public static int totalSecondTime = (24*60*60);
@@ -52,7 +54,7 @@ public class TimeUtils
 
     //Syncs the time to real since MC's time differs from real. Eg : 24000 is converted to 18000 to match midnight
     public static int syncToReal(int time){
-        time -= 6000;
+        time -= RealSereneSettings.dayTimeSyncValue;
         if (time <= 0){
             int diff = 0 - time;
             time = 24000 - diff;

@@ -15,6 +15,7 @@ public class RealSereneSettings {
   public static SeasonsDates dayLenghtMenu = new SeasonsDates();
 
   @Config.Comment("Enable daytime syncing")
+  @Config.RequiresWorldRestart
   public static boolean realDayTime = true;
 
   @Config.Comment("Enable seasons syncing")
