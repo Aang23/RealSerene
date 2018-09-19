@@ -1,4 +1,5 @@
 package com.aang23.realserene.config;
+
 import com.aang23.realserene.RealSerene;
 
 import net.minecraftforge.common.config.Config;
@@ -10,21 +11,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = RealSerene.MODID)
 public class RealSereneSettings {
-  @Config.Name("Seasons Settings")
-  @Config.Comment("Here you can change seasons changing dates")
-  public static SeasonsDates dayLenghtMenu = new SeasonsDates();
+    @Config.Comment("Enable daytime syncing")
+    @Config.RequiresWorldRestart
+    public static boolean realDayTime = true;
 
-  @Config.Comment("Enable daytime syncing")
-  @Config.RequiresWorldRestart
-  public static boolean realDayTime = true;
+    @Config.Comment("Enable seasons syncing")
+    public static boolean realSeasonsCycle = true;
 
-  @Config.Comment("Enable seasons syncing")
-  public static boolean realSeasonsCycle = true;
+    @Config.Comment("The value used to sync the day")
+    public static int dayTimeSyncValue = 6000;
 
-  @Config.Comment("The value used to sync the day")
-  public static int dayTimeSyncValue = 6000;
-
-  public static class SeasonsDates {
     @Config.Name("Early summer starting date :")
     public static String start_EARLY_SUMMER = "21/06";
     @Config.Name("Early summer ending date :")
@@ -39,7 +35,6 @@ public class RealSereneSettings {
     public static String start_LATE_SUMMER = "xx/xx";
     @Config.Name("Late summer ending date :")
     public static String stop_LATE_SUMMER = "21/09";
-
 
     @Config.Name("Early autumn starting date :")
     public static String start_EARLY_AUTUMN = "22/09";
@@ -56,7 +51,6 @@ public class RealSereneSettings {
     @Config.Name("Late autumn ending date :")
     public static String stop_LATE_AUTUMN = "20/12";
 
-
     @Config.Name("Early winter starting date :")
     public static String start_EARLY_WINTER = "21/12";
     @Config.Name("Early winter ending date :")
@@ -72,7 +66,6 @@ public class RealSereneSettings {
     @Config.Name("Late winter ending date :")
     public static String stop_LATE_WINTER = "19/3";
 
-
     @Config.Name("Early spring starting date :")
     public static String start_EARLY_SPRING = "20/03";
     @Config.Name("Early spring ending date :")
@@ -87,16 +80,12 @@ public class RealSereneSettings {
     public static String start_LATE_SPRING = "xx/xx";
     @Config.Name("Late spring ending date :")
     public static String stop_LATE_SPRING = "20/06";
-  }
 
-  @Mod.EventBusSubscriber(modid = RealSerene.MODID)
-    private static class Handler
-    {
+    @Mod.EventBusSubscriber(modid = RealSerene.MODID)
+    private static class Handler {
         @SubscribeEvent
-        public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event)
-        {
-            if (event.getModID().equals(RealSerene.MODID))
-            {
+        public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+            if (event.getModID().equals(RealSerene.MODID)) {
                 ConfigManager.sync(RealSerene.MODID, Config.Type.INSTANCE);
             }
         }
