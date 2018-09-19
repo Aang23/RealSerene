@@ -52,7 +52,7 @@ public class TimeUtils
         return Integer.parseInt(hourFormat.format(time));
     }
 
-    //Syncs the time to real since MC's time differs from real. Eg : 24000 is converted to 18000 to match midnight
+    //Syncs the time to real since MC's time differs from real. Eg : 24000 is converted to 18000 to match midnight (Unless the value is changed in the config)
     public static int syncToReal(int time){
         time -= RealSereneSettings.dayTimeSyncValue;
         if (time <= 0){
