@@ -49,13 +49,17 @@ public class RealSerene
     public void serverStarting(FMLServerStartingEvent event){
         event.registerServerCommand(new RealSereneCommand());
 
+        if(RealSereneSettings.RealDayTime){
         System.out.println("Registering event for RealDayTime...");
         MinecraftForge.EVENT_BUS.register(new DaytimeChangeListener());
+        }
         
+        if(Loader.isModLoaded("sereneseasons") && RealSereneSettings.RealSeasonsCycle){
         System.out.println("Registering event for RealSeasonsCycle...");
         MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
         Timer timer = new Timer();
         timer.schedule(new SeasonsTimer(), 0, 60000);
+        }
     }
 
     @EventHandler
