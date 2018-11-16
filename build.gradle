@@ -12,6 +12,10 @@ repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
         mavenCentral()
+        maven {
+               name 'Tethys (drakon.io)'
+               url "http://tethys.drakon.io/maven"
+              }
     }
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
@@ -39,13 +43,18 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+configurations {
+    shade
+    compile.extendsFrom shade
+}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
      
-    compile 'org.openweathermap.java-api:api-core:1.2'
+    shade 'org.openweathermap.java-api:api-core:1.2'
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
@@ -64,6 +73,14 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+}
+
+jar {
+    configurations.shade.each { dep ->
+        from(project.zipTree(dep)){
+            exclude 'META-INF', 'META-INF/**'
+        }
+    }
 }
 
 processResources {

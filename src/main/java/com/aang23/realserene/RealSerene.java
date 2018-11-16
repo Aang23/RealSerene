@@ -17,7 +17,7 @@ import com.aang23.realserene.commands.RealSereneCommand;
 import com.aang23.realserene.config.RealSereneSettings;
 import java.util.Timer;
 import net.minecraftforge.fml.common.Loader;
-import com.aang23.realserene.timers.SeasonsTimer;
+import com.aang23.realserene.timers.*;
 
 @Mod(modid = RealSerene.MODID, name = RealSerene.NAME, version = RealSerene.VERSION)
 public class RealSerene {
@@ -54,6 +54,12 @@ public class RealSerene {
             MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
             Timer timer = new Timer();
             timer.schedule(new SeasonsTimer(), 0, 60000);
+        }
+
+        if (RealSereneSettings.realVanillaWeatherCycle) {
+            System.out.println("Registering timer for RealVanillaWeatherCycle...");
+            Timer timer = new Timer();
+            timer.schedule(new WeatherTimer(), 0, RealSereneSettings.real_vanilla_weather_timing);
         }
     }
 

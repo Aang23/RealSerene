@@ -93,6 +93,9 @@ public class RealSereneSettings {
     @Config.Name("OpenWeatherMap Country Name")
     public static String opm_country_code = "";
 
+    @Config.Comment("RealVanillaWeatherSync Update Timing")
+    public static int real_vanilla_weather_timing = 5*60000;
+
     @Mod.EventBusSubscriber(modid = RealSerene.MODID)
     private static class Handler {
         @SubscribeEvent
