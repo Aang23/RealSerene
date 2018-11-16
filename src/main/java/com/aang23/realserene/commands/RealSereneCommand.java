@@ -18,14 +18,15 @@ public class RealSereneCommand extends CommandBase {
 	@Override
 	public String getUsage(ICommandSender icommandsender)
 	{
-	return "Usage : /realserene <info/check> [args]";
+	return "Usage : /realserene <info/check/getw> [args]";
 	}
 
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         if (args.length>0){
         if(args[0].equals("info")) InfoSubCommand.call(server, sender, args);
-        else if(args[0].equals("check")) CheckSubCommand.call(server, sender, args);
+		else if(args[0].equals("check")) CheckSubCommand.call(server, sender, args);
+		else if(args[0].equals("getw")) GetWSubCommand.call(server, sender, args);
         else sender.sendMessage(new TextComponentString("Usage : /realserene <info/check> [args]"));
         } else sender.sendMessage(new TextComponentString("Usage : /realserene <info/check> [args]"));
 	}

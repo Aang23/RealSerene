@@ -9,21 +9,20 @@ import org.openweathermap.api.query.*;
 import org.openweathermap.api.query.currentweather.CurrentWeatherOneLocationQuery;
 
 public class WeatherGetter {
-  public static String getWeather() {
+  public static String getWeather(String city, String country) {
     DataWeatherClient client = new UrlConnectionDataWeatherClient(RealSereneSettings.opm_api_key);
     CurrentWeatherOneLocationQuery currentWeatherOneLocationQuery = QueryBuilderPicker.pick().currentWeather() // get
                                                                                                                // current
                                                                                                                // weather
         .oneLocation() // for one location
-        .byCityName("Paris") // for Kharkiv city
-        .countryCode("FR") // in Ukraine
+        .byCityName(city) // for Kharkiv city
+        .countryCode(country) // in Ukraine
         .type(Type.ACCURATE) // with Accurate search
         .language(Language.ENGLISH) // in English language
         .responseFormat(ResponseFormat.JSON)// with JSON response format
         .unitFormat(UnitFormat.METRIC) // in metric units
         .build();
     CurrentWeather currentWeather = client.getCurrentWeather(currentWeatherOneLocationQuery);
-    System.out.println(currentWeather.getWeather());
-    return "working";
+    return currentWeather.getWeather().toString();
   }
 }
