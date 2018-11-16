@@ -66,5 +66,10 @@ public class RealSerene {
         else
             minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doDaylightCycle", "true");
         TimeUtils.syncValue = RealSereneSettings.dayTimeSyncValue;
+
+        if (RealSereneSettings.realVanillaWeatherCycle)
+            minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doWeatherCycle", "false");
+        else
+            minecraftServer.getWorld(0).getGameRules().setOrCreateGameRule("doWeatherCycle", "true");
     }
 }
