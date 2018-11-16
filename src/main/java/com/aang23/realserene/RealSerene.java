@@ -16,6 +16,7 @@ import com.aang23.realserene.events.DaytimeChangeListener;
 import com.aang23.realserene.commands.RealSereneCommand;
 import com.aang23.realserene.config.RealSereneSettings;
 import java.util.Timer;
+import net.minecraftforge.fml.common.Loader;
 import com.aang23.realserene.timers.SeasonsTimer;
 
 
@@ -49,12 +50,12 @@ public class RealSerene
     public void serverStarting(FMLServerStartingEvent event){
         event.registerServerCommand(new RealSereneCommand());
 
-        if(RealSereneSettings.RealDayTime){
+        if(RealSereneSettings.realDayTime){
         System.out.println("Registering event for RealDayTime...");
         MinecraftForge.EVENT_BUS.register(new DaytimeChangeListener());
         }
         
-        if(Loader.isModLoaded("sereneseasons") && RealSereneSettings.RealSeasonsCycle){
+        if(Loader.isModLoaded("sereneseasons") && RealSereneSettings.realSeasonsCycle){
         System.out.println("Registering event for RealSeasonsCycle...");
         MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
         Timer timer = new Timer();
