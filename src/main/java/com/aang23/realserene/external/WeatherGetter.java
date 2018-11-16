@@ -1,5 +1,7 @@
 package com.aang23.realserene.external;
 
+import com.aang23.realserene.config.RealSereneSettings;
+
 import org.openweathermap.api.DataWeatherClient;
 import org.openweathermap.api.UrlConnectionDataWeatherClient;
 import org.openweathermap.api.model.currentweather.CurrentWeather;
@@ -8,7 +10,7 @@ import org.openweathermap.api.query.currentweather.CurrentWeatherOneLocationQuer
 
 public class WeatherGetter {
   public static String getWeather() {
-    DataWeatherClient client = new UrlConnectionDataWeatherClient("You won't get that !");
+    DataWeatherClient client = new UrlConnectionDataWeatherClient(RealSereneSettings.opm_api_key);
     CurrentWeatherOneLocationQuery currentWeatherOneLocationQuery = QueryBuilderPicker.pick().currentWeather() // get
                                                                                                                // current
                                                                                                                // weather
