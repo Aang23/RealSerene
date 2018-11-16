@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import com.aang23.realserene.config.RealSereneSettings;
+import org.joda.time.DateTime;
 
 public class TimeUtils {
     public static int totalSecondTime = (24 * 60 * 60);
@@ -36,7 +37,8 @@ public class TimeUtils {
     public static int getHours() {
         DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("HH");
         LocalDateTime time = LocalDateTime.now();
-        return Integer.parseInt(hourFormat.format(time));
+        DateTime currentHour = new DateTime(new java.util.Date()).withHourOfDay(Integer.parseInt(hourFormat.format(time))).plusHours(RealSereneSettings.timeShift);
+        return currentHour.getHourOfDay();
     }
 
     public static int getMinutes() {
