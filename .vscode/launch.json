@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WeatherGetter",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.aang23.realserene.external.WeatherGetter",
+            "args": "",
+            "projectName": "RealSerene"
+        }
+    ]
+}

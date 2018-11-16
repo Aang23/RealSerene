@@ -28,7 +28,7 @@ public class RealSerene {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println("Initializing RealSerene...");
-
+        com.aang23.realserene.external.WeatherGetter.getWeather();
     }
 
     @EventHandler
