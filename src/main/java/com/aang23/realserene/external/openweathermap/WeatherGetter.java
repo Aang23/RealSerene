@@ -1,4 +1,4 @@
-package com.aang23.realserene.external;
+package com.aang23.realserene.external.openweathermap;
 
 import com.aang23.realserene.config.RealSereneSettings;
 

@@ -18,6 +18,9 @@ public class RealSereneSettings {
     @Config.Comment("Enable seasons syncing")
     public static boolean realSeasonsCycle = true;
 
+    @Config.Comment("Enable Vanilla weather syncing")
+    public static boolean realVaillaWeatherCycle = true;
+
     @Config.Comment("The value used to sync the day")
     public static int dayTimeSyncValue = 6000;
 
@@ -83,6 +86,12 @@ public class RealSereneSettings {
 
     @Config.Name("OpenWeatherMap API Key")
     public static String opm_api_key = "";
+
+    @Config.Name("OpenWeatherMap City Name")
+    public static String opm_city_name = "";
+
+    @Config.Name("OpenWeatherMap Country Name")
+    public static String opm_country_code = "";
 
     @Mod.EventBusSubscriber(modid = RealSerene.MODID)
     private static class Handler {
