@@ -1,15 +1,7 @@
 package com.aang23.realserene.timers;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.TimerTask;
-
 import com.aang23.realserene.utils.SeasonsHelper;
-
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.server.FMLServerHandler;
 import sereneseasons.api.season.Season;
 
 public class SeasonsTimer extends TimerTask {

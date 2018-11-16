@@ -7,7 +7,6 @@ import net.minecraft.util.text.TextComponentString;
 
 import com.aang23.realserene.config.RealSereneSettings;
 import com.aang23.realserene.external.openweathermap.*;
-import com.aang23.realserene.utils.*;
 
 public class GetWSubCommand {
     public static void call(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
