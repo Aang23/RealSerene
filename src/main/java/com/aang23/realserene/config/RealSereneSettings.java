@@ -81,6 +81,9 @@ public class RealSereneSettings {
     @Config.Name("Late spring ending date :")
     public static String stop_LATE_SPRING = "20/06";
 
+    @Config.Name("OpenWeatherMap API Key")
+    public static String opm_api_key = "";
+
     @Mod.EventBusSubscriber(modid = RealSerene.MODID)
     private static class Handler {
         @SubscribeEvent
