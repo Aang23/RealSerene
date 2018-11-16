@@ -16,7 +16,7 @@ public class TimeUtils {
     }
 
     public static int getDay() {
-        DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("DD");
+        DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("dd");
         LocalDateTime time = LocalDateTime.now();
         return Integer.parseInt(hourFormat.format(time));
     }

@@ -55,6 +55,7 @@ dependencies {
     //compile "some.group:artifact:version"
      
     shade 'org.openweathermap.java-api:api-core:1.2'
+    shade group: 'joda-time', name: 'joda-time', version: '2.10.1'
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
