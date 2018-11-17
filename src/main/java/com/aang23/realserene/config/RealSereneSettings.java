@@ -18,7 +18,7 @@ public class RealSereneSettings {
     public static boolean realSeasonsCycle = true;
 
     @Config.Comment("Enable Vanilla weather syncing")
-    public static boolean realVanillaWeatherCycle = true;
+    public static boolean realVanillaWeatherCycle = false;
 
     @Config.Comment("The value used to sync the day")
     public static int dayTimeSyncValue = 6000;
