@@ -5,7 +5,7 @@ import com.aang23.realserene.utils.SeasonsHelper;
 import sereneseasons.api.season.Season;
 
 public class SeasonsTimer extends TimerTask {
-    public static Season.SubSeason season = Season.SubSeason.MID_SPRING;
+    public static Season.SubSeason season;
 
     @Override
     public void run() {

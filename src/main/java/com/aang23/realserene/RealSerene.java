@@ -52,6 +52,8 @@ public class RealSerene {
         if (Loader.isModLoaded("sereneseasons") && RealSereneSettings.realSeasonsCycle) {
             System.out.println("Registering event for RealSeasonsCycle...");
             MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
+            SeasonsTimer toRunOnce = new SeasonsTimer();
+            toRunOnce.run();
             Timer timer = new Timer();
             timer.schedule(new SeasonsTimer(), 0, 60000);
         }
