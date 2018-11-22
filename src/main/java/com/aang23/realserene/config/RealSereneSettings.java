@@ -94,6 +94,9 @@ public class RealSereneSettings {
     @Config.Comment("RealVanillaWeatherSync Update Timing")
     public static int real_vanilla_weather_timing = 5*60000;
 
+    @Config.Comment("RealSeasonsSync Update Timing")
+    public static int real_seasons_timing = 5*60000;
+
     @Config.Comment("Time shift (positive or negative), from the local machine's time (Hours)")
     public static int timeShift = 0;
 

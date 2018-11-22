@@ -53,7 +53,7 @@ public class RealSerene {
             System.out.println("Registering event for RealSeasonsCycle...");
             MinecraftForge.EVENT_BUS.register(new SeasonChangeListener());
             Timer timer = new Timer();
-            timer.schedule(new SeasonsTimer(), 0, 60000);
+            timer.schedule(new SeasonsTimer(), 0, RealSereneSettings.real_seasons_timing);
         }
 
         if (RealSereneSettings.realVanillaWeatherCycle) {
