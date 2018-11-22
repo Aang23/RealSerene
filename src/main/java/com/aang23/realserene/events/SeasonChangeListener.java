@@ -10,7 +10,12 @@ public class SeasonChangeListener {
     @SubscribeEvent
     public void onTick(TickEvent.WorldTickEvent event) {
         if (RealSereneSettings.realSeasonsCycle) {
+            try{
             SeasonsHelper.setSeason(0, SeasonsTimer.season);
+            } catch (NullPointerException e){
+                System.out.println("Season not set. Calculating.");
+                SeasonsTimer.runOnce();
+            }
         }
     }
 }

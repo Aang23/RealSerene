@@ -14,126 +14,90 @@ public class SeasonsHelper {
     public static class SeasonsChecker {
         // Summer checks
         public static boolean isEarlySummer() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_EARLY_SUMMER);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_EARLY_SUMMER);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_EARLY_SUMMER);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_EARLY_SUMMER);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isMidSummer() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_MID_SUMMER);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_MID_SUMMER);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_MID_SUMMER);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_MID_SUMMER);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isLateSummer() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_LATE_SUMMER);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_LATE_SUMMER);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_LATE_SUMMER);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_LATE_SUMMER);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         // Autumn checks
         public static boolean isEarlyAutumn() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_EARLY_AUTUMN);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_EARLY_AUTUMN);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_EARLY_AUTUMN);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_EARLY_AUTUMN);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isMidAutumn() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_MID_AUTUMN);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_MID_AUTUMN);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_MID_AUTUMN);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_MID_AUTUMN);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isLateAutumn() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_LATE_AUTUMN);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_LATE_AUTUMN);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_LATE_AUTUMN);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_LATE_AUTUMN);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         // Winter checks
         public static boolean isEarlyWinter() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_EARLY_WINTER);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_EARLY_WINTER);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_EARLY_WINTER);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_EARLY_WINTER);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isMidWinter() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_MID_WINTER);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_MID_WINTER);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_MID_WINTER);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_MID_WINTER);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isLateWinter() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_LATE_WINTER);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_LATE_WINTER);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_LATE_WINTER);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_LATE_WINTER);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         // Spring checks
         public static boolean isEarlySpring() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_EARLY_SPRING);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_EARLY_SPRING);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_EARLY_SPRING);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_EARLY_SPRING);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isMidSpring() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_MID_SPRING);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_MID_SPRING);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_MID_SPRING);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_MID_SPRING);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
 
         public static boolean isLateSpring() {
-            DayMonthDate starting = getDateFromString(RealSereneSettings.start_LATE_SPRING);
-            DayMonthDate ending = getDateFromString(RealSereneSettings.stop_LATE_SPRING);
-            DayMonthDate current = getCurrentDate();
-            DateTime currentDate = new DateTime(new java.util.Date()).withMonthOfYear(current.month).withDayOfMonth(current.day);
-            DateTime startingDate = new DateTime(new java.util.Date()).withMonthOfYear(starting.month).withDayOfMonth(starting.day);
-            DateTime endingDate = new DateTime(new java.util.Date()).withMonthOfYear(ending.month).withDayOfMonth(ending.day);
-            return currentDate.isAfter(startingDate) && currentDate.isBefore(endingDate);
+            DateTime starting = getDateFromString(RealSereneSettings.start_LATE_SPRING);
+            DateTime ending = getDateFromString(RealSereneSettings.stop_LATE_SPRING);
+            DateTime current = getCurrentDate();
+            return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
     }
 
@@ -145,17 +109,13 @@ public class SeasonsHelper {
         SeasonHandler.sendSeasonUpdate(minecraftServer.getWorld(dim));
     }
 
-    private static DayMonthDate getDateFromString(String input) {
-        DayMonthDate toreturn = new DayMonthDate();
-        toreturn.day = Integer.parseInt(input.split("/")[0]);
-        toreturn.month = Integer.parseInt(input.split("/")[1]);
+    private static DateTime getDateFromString(String input) {
+        DateTime toreturn = new DateTime().withDayOfMonth(Integer.parseInt(input.split("/")[0])).withMonthOfYear(Integer.parseInt(input.split("/")[1])).withYear(TimeUtils.getYear());
         return toreturn;
     }
 
-    private static DayMonthDate getCurrentDate() {
-        DayMonthDate toreturn = new DayMonthDate();
-        toreturn.day = TimeUtils.getDay();
-        toreturn.month = TimeUtils.getMonth();
+    private static DateTime getCurrentDate() {
+        DateTime toreturn = new DateTime().withDayOfMonth(TimeUtils.getDay()).withMonthOfYear(TimeUtils.getMonth()).withYear(TimeUtils.getYear());
         return toreturn;
     }
 }

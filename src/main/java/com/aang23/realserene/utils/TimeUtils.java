@@ -53,6 +53,12 @@ public class TimeUtils {
         return Integer.parseInt(hourFormat.format(time));
     }
 
+    public static int getYear() {
+        DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("YY");
+        LocalDateTime time = LocalDateTime.now();
+        return Integer.parseInt(hourFormat.format(time));
+    }
+
     // Syncs the time to real since MC's time differs from real. Eg : 24000 is
     // converted to 18000 to match midnight (Unless the value is changed in the
     // config)
