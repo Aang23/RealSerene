@@ -1,13 +1,6 @@
 package com.aang23.realserene.utils;
 
 import com.aang23.realserene.config.RealSereneSettings;
-
-import net.minecraft.server.MinecraftServer;
-import sereneseasons.api.season.Season;
-import sereneseasons.handler.season.SeasonHandler;
-import sereneseasons.season.SeasonSavedData;
-import sereneseasons.season.SeasonTime;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import org.joda.time.DateTime;
 
 public class SeasonsHelper {
@@ -99,14 +92,6 @@ public class SeasonsHelper {
             DateTime current = getCurrentDate();
             return (current.isAfter(starting) && current.isBefore(ending)) || (current.isEqual(starting) || current.isEqual(ending));
         }
-    }
-
-    public static void setSeason(int dim, Season.SubSeason newSeason) {
-        MinecraftServer minecraftServer = FMLCommonHandler.instance().getMinecraftServerInstance();
-        SeasonSavedData seasonData = SeasonHandler.getSeasonSavedData(minecraftServer.getWorld(dim));
-        seasonData.seasonCycleTicks = SeasonTime.ZERO.getSubSeasonDuration() * newSeason.ordinal();
-        seasonData.markDirty();
-        SeasonHandler.sendSeasonUpdate(minecraftServer.getWorld(dim));
     }
 
     private static DateTime getDateFromString(String input) {

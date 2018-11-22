@@ -1,7 +1,6 @@
 package com.aang23.realserene.external.openweathermap;
 
 import com.aang23.realserene.config.RealSereneSettings;
-
 import org.openweathermap.api.DataWeatherClient;
 import org.openweathermap.api.UrlConnectionDataWeatherClient;
 import org.openweathermap.api.model.currentweather.CurrentWeather;

@@ -6,7 +6,6 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 
-
 public class RealSereneCommand extends CommandBase {
 	
 	@Override

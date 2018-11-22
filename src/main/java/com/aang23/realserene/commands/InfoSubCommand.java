@@ -6,7 +6,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import com.aang23.realserene.utils.TimeUtils;
 
-
 public class InfoSubCommand {
 	public static void call(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		if(args.length>1){

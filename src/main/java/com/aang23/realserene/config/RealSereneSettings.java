@@ -1,7 +1,6 @@
 package com.aang23.realserene.config;
 
 import com.aang23.realserene.RealSerene;
-
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
