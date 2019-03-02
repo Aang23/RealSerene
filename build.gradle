@@ -69,6 +69,7 @@ dependencies {
     //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
     provided files('libs/sereneseasons.jar')
     provided files('libs/weather2.jar')
+    provided files('libs/coroutil.jar')
 
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
