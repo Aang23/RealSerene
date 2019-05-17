@@ -22,6 +22,12 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 version = "1.5"
+
+def env = System.getenv()
+if (env.BUILD_NUMBER) {
+    version = version + "-" + "${env.BUILD_NUMBER}"
+}
+
 group = "com.aang23.realserene" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "realserene"
 
@@ -101,5 +107,18 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://www.altillimity.com/nexus/content/repositories/releases") {
+             authentication(userName: mavenUser, password: mavenPassword)
+	}
+             pom.version = "$version-1.12.2"
+             pom.artifactId = "realserene"
+             pom.groupId = "com.aang23"
+       }
     }
 }
