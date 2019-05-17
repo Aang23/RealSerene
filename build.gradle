@@ -119,7 +119,7 @@ uploadArchives {
 	}
              pom.version = "$version-1.12.2"
              pom.artifactId = "realserene"
-             pom.groupId = "com.aang23"
+             pom.groupId = "com.aang23.realserene"
        }
     }
 }
