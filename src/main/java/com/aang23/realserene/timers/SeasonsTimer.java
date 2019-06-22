@@ -9,6 +9,10 @@ public class SeasonsTimer extends TimerTask {
 
     @Override
     public void run() {
+
+        // Safety
+        season = Season.SubSeason.EARLY_SUMMER;
+
         // Summer checking
         if (SeasonsHelper.SeasonsChecker.isEarlySummer())
             season = Season.SubSeason.EARLY_SUMMER;
@@ -40,11 +44,13 @@ public class SeasonsTimer extends TimerTask {
             season = Season.SubSeason.MID_SPRING;
         if (SeasonsHelper.SeasonsChecker.isLateSpring())
             season = Season.SubSeason.LATE_SPRING;
-
-        System.out.println("The season is : " + season.toString());
     }
 
     public static void runOnce() {
+
+        // Safety
+        season = Season.SubSeason.EARLY_SUMMER;
+
         // Summer checking
         if (SeasonsHelper.SeasonsChecker.isEarlySummer())
             season = Season.SubSeason.EARLY_SUMMER;
@@ -76,8 +82,6 @@ public class SeasonsTimer extends TimerTask {
             season = Season.SubSeason.MID_SPRING;
         if (SeasonsHelper.SeasonsChecker.isLateSpring())
             season = Season.SubSeason.LATE_SPRING;
-
-        System.out.println("The season is : " + season.toString());
     }
 
 }
