@@ -114,7 +114,7 @@ processResources {
 uploadArchives {
     repositories {
        mavenDeployer {
-             repository(url: "http://www.altillimity.com/nexus/content/repositories/releases") {
+             repository(url: "https://maven.altillimity.com/content/repositories/releases") {
              authentication(userName: mavenUser, password: mavenPassword)
 	}
              pom.version = "$version-1.12.2"
